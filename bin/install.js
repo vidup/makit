@@ -11,12 +11,12 @@ const isHelp = args.includes('--help') || args.includes('-h');
 
 if (isHelp) {
   console.log(`
-cc-kit - Architecture 3 couches pour Claude Code
+cc-ship - Architecture 3 couches pour Claude Code
 
 Usage:
-  npx cc-kit              Installe dans ./.claude/ (projet local)
-  npx cc-kit --global     Installe dans ~/.claude/ (global)
-  npx cc-kit --help       Affiche cette aide
+  npx cc-ship              Installe dans ./.claude/ (projet local)
+  npx cc-ship --global     Installe dans ~/.claude/ (global)
+  npx cc-ship --help       Affiche cette aide
 
 Structure installée:
   commands/makit/        Commandes de workflow (/makit:xxx)
@@ -34,7 +34,7 @@ const targetDir = isGlobal
 // Source directory (where the package is installed)
 const sourceDir = path.join(__dirname, '..');
 
-console.log(`\n🚀 Installation de cc-kit...`);
+console.log(`\n🚀 Installation de cc-ship...`);
 console.log(`   Destination: ${targetDir}\n`);
 
 // Directories to copy

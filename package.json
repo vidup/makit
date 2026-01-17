@@ -1,9 +1,9 @@
 {
-  "name": "cc-kit",
+  "name": "cc-ship",
   "version": "0.0.1",
   "description": "Architecture 3 couches pour Claude Code: Commands -> Agents -> Skills",
   "bin": {
-    "cc-kit": "bin/install.js"
+    "cc-ship": "bin/install.js"
   },
   "files": [
     "bin",
@@ -23,7 +23,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vdstack/cc-kit"
+    "url": "https://github.com/vdstack/cc-ship"
   },
   "engines": {
     "node": ">=14.0.0"
