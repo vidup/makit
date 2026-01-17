@@ -1,6 +1,7 @@
 ---
 name: makit-brainstorming
 description: "Techniques de brainstorming pour explorer et structurer des idées"
+user-invocable: false
 ---
 
 # Skill: Brainstorming

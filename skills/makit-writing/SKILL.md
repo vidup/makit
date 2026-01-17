@@ -1,6 +1,7 @@
 ---
 name: makit-writing
 description: "Guidelines de style pour la rédaction de documents markdown"
+user-invocable: false
 ---
 
 # Skill: Writing
