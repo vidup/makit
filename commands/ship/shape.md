@@ -1,19 +1,19 @@
 ---
-name: makit:shape
+name: ship:shape
 description: "Lance le shaping d'un brief en packages Shape Up"
 ---
 
 # Commande shape
 
-Lance l'agent makit-shaper pour transformer un brief en packages Shape Up.
+Lance l'agent ship-shaper pour transformer un brief en packages Shape Up.
 
 ## Instructions
 
-Tu dois lancer l'agent `makit-shaper` en utilisant le tool Task avec les paramètres suivants:
+Tu dois lancer l'agent `ship-shaper` en utilisant le tool Task avec les paramètres suivants:
 
 ```
-subagent_type: makit-shaper
-prompt: [Le chemin du brief ou "Utilise le brief par défaut .makit/brief.md"]
+subagent_type: ship-shaper
+prompt: [Le chemin du brief ou "Utilise le brief par défaut .ship/brief.md"]
 ```
 
 ## ⚠️ Comportement de relais (IMPORTANT)
@@ -40,10 +40,10 @@ Quand l'agent te retourne une question pour l'utilisateur :
 
 1. **Vérifier que le brief existe** :
    - Si un chemin est fourni, vérifie qu'il existe
-   - Sinon, vérifie que `.makit/brief.md` existe
-   - Si aucun brief n'existe, suggère `/makit:brainstorm` pour en créer un
+   - Sinon, vérifie que `.ship/brief.md` existe
+   - Si aucun brief n'existe, suggère `/ship:brainstorm` pour en créer un
 
-2. **Lancer l'agent makit-shaper** qui va :
+2. **Lancer l'agent ship-shaper** qui va :
    - Lire le brief
    - Proposer un découpage en packages
    - Mener la recherche (autonome)
@@ -53,13 +53,13 @@ Quand l'agent te retourne une question pour l'utilisateur :
 ## Syntaxe
 
 ```
-/makit:shape
+/ship:shape
 ```
 
-Utilise le brief par défaut `.makit/brief.md`
+Utilise le brief par défaut `.ship/brief.md`
 
 ```
-/makit:shape path/to/brief.md
+/ship:shape path/to/brief.md
 ```
 
 Utilise le brief spécifié
@@ -67,27 +67,27 @@ Utilise le brief spécifié
 ## Exemple d'utilisation
 
 ```
-/makit:shape
+/ship:shape
 ```
 
 Lance le shaping avec le brief par défaut.
 
 ```
-/makit:shape .makit/briefs/feature-x.md
+/ship:shape .ship/briefs/feature-x.md
 ```
 
 Lance le shaping avec un brief spécifique.
 
 ## Output
 
-Le package sera créé dans `.makit/packages/<nom-package>/` avec :
+Le package sera créé dans `.ship/packages/<nom-package>/` avec :
 - `research.md` : Recherche technique et fonctionnelle
 - `stack.md` : Choix de stack justifiés
 - `requirements.md` : Exigences structurées et priorisées
 
-L'index des packages sera mis à jour dans `.makit/packages/index.md`.
+L'index des packages sera mis à jour dans `.ship/packages/index.md`.
 
 ## Prérequis
 
-- Un brief doit exister (créé par `/makit:brainstorm` ou manuellement)
-- Si aucun brief n'existe, lance d'abord `/makit:brainstorm`
+- Un brief doit exister (créé par `/ship:brainstorm` ou manuellement)
+- Si aucun brief n'existe, lance d'abord `/ship:brainstorm`

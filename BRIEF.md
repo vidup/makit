@@ -1,4 +1,4 @@
-# Makit - Brief Projet
+# Ship - Brief Projet
 
 > Un toolkit pour augmenter Claude Code avec un workflow pragmatique centré sur
 > l'humain.
@@ -54,7 +54,7 @@ PROJET (le repo, la vision globale, dure dans le temps)
 ### Organisation des fichiers
 
 ```
-.makit/
+.ship/
 ├── project.md                    # Vision globale du projet
 ├── docs.yaml                     # Sources de documentation
 │
@@ -124,7 +124,7 @@ Quatre agents principaux, chacun avec des compétences spécialisées.
 - Proposer une research domaine métier (optionnel)
 - Produire un brief structuré
 
-**Output** : `.makit/brief.md` + `.makit/research/domain.md` (optionnel)
+**Output** : `.ship/brief.md` + `.ship/research/domain.md` (optionnel)
 
 **Techniques disponibles** : 5 Whys, SCAMPER, Mind Mapping, Reverse Brainstorming, Six Thinking Hats, Starbursting, SWOT
 
@@ -253,7 +253,7 @@ Quand on arrive sur un nouveau projet ou une codebase existante :
 
 Quand on démarre un nouveau travail (2-6 semaines) :
 
-- **Créer** un dossier package dans `.makit/packages/`
+- **Créer** un dossier package dans `.ship/packages/`
 - **Rechercher** (optionnel, proposé à l'utilisateur) :
   - Questions pour comprendre le domaine
   - Recherche web (state of the art, best practices)
@@ -313,7 +313,7 @@ Chaque sous-agent = contexte vierge = pas de dégradation
 
 - L'agent principal orchestre et communique avec l'humain
 - Les sous-agents exécutent avec un contexte frais
-- Les fichiers `.makit/` servent de mémoire persistante entre sessions
+- Les fichiers `.ship/` servent de mémoire persistante entre sessions
 - Parallélisation automatique quand c'est possible
 
 ---
@@ -334,7 +334,7 @@ Chaque sous-agent = contexte vierge = pas de dégradation
 3. Enregistrement dans `docs.yaml` :
 
 ```yaml
-# .makit/docs.yaml - Éditable manuellement
+# .ship/docs.yaml - Éditable manuellement
 sources:
   - path: ./README.md
     type: overview

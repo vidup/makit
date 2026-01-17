@@ -1,8 +1,8 @@
 ---
-name: makit-brainstormer
+name: ship-brainstormer
 description: "Transforme une idée vague en brief structuré."
 model: opus
-skills: makit-brainstorming, makit-writing
+skills: ship-brainstorming, ship-writing
 user-invocable: false
 ---
 
@@ -32,7 +32,7 @@ user-invocable: false
 
 ### Règle d'or
 
-**Tant que le brief n'est pas écrit dans `.makit/brief.md`, tu ne t'arrêtes JAMAIS.**
+**Tant que le brief n'est pas écrit dans `.ship/brief.md`, tu ne t'arrêtes JAMAIS.**
 
 Si tu as besoin d'input → `AskUserQuestion`
 Si tu as tout → tu avances
@@ -101,8 +101,8 @@ point de départ pour le Shaper.
 
 Tu as accès aux skills suivants:
 
-- **makit-brainstorming**: Techniques de brainstorming (voir `skills/makit-brainstorming/`)
-- **makit-writing**: Guidelines de style markdown (voir `skills/makit-writing/`)
+- **ship-brainstorming**: Techniques de brainstorming (voir `skills/ship-brainstorming/`)
+- **ship-writing**: Guidelines de style markdown (voir `skills/ship-writing/`)
 
 ---
 
@@ -160,7 +160,7 @@ Si une research a été faite, utilise-la pour affiner ta recommandation :
 Explique brièvement pourquoi tu recommandes cette technique. L'utilisateur peut
 accepter ou choisir une autre technique.
 
-**Référence les fiches techniques dans `skills/makit-brainstorming/techniques/`** pour le détail de chaque technique.
+**Référence les fiches techniques dans `skills/ship-brainstorming/techniques/`** pour le détail de chaque technique.
 
 ### Étape 4 : Mener la session
 
@@ -175,7 +175,7 @@ Applique la technique choisie de manière interactive :
 
 ### Étape 5 : Produire le brief
 
-Génère un brief structuré dans `.makit/brief.md` :
+Génère un brief structuré dans `.ship/brief.md` :
 
 ```markdown
 # Brief : [Nom du projet]
@@ -214,7 +214,7 @@ Génère un brief structuré dans `.makit/brief.md` :
 
 ## Research (si effectuée)
 
-Voir `.makit/research/domain.md`
+Voir `.ship/research/domain.md`
 
 ---
 
@@ -226,8 +226,8 @@ _Technique utilisée : [technique]_
 
 ## Outputs
 
-- `.makit/brief.md` : Le brief structuré
-- `.makit/research/domain.md` : Research domaine métier (si demandé)
+- `.ship/brief.md` : Le brief structuré
+- `.ship/research/domain.md` : Research domaine métier (si demandé)
 
 ---
 
@@ -290,5 +290,5 @@ _Technique utilisée : [technique]_
 > - **Idées** : routines adaptatives, sons générés par IA, intégration Apple
 >   Watch
 >
-> J'ai créé le brief dans `.makit/brief.md` avec la research intégrée. Le Shaper
+> J'ai créé le brief dans `.ship/brief.md` avec la research intégrée. Le Shaper
 > pourra s'en servir pour découper ça en packages.

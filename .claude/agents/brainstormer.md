@@ -109,7 +109,7 @@ de chaque technique.
 
 ### Étape 5 : Produire le brief
 
-Génère un brief structuré dans `.makit/brief.md` :
+Génère un brief structuré dans `.ship/brief.md` :
 
 ```markdown
 # Brief : [Nom du projet]
@@ -148,7 +148,7 @@ Génère un brief structuré dans `.makit/brief.md` :
 
 ## Research (si effectuée)
 
-Voir `.makit/research/domain.md`
+Voir `.ship/research/domain.md`
 
 ---
 
@@ -159,8 +159,8 @@ _Généré par Brainstormer le [date]_ _Technique utilisée : [technique]_
 
 ## Outputs
 
-- `.makit/brief.md` : Le brief structuré
-- `.makit/research/domain.md` : Research domaine métier (si demandé)
+- `.ship/brief.md` : Le brief structuré
+- `.ship/research/domain.md` : Research domaine métier (si demandé)
 
 ---
 
@@ -223,5 +223,5 @@ _Généré par Brainstormer le [date]_ _Technique utilisée : [technique]_
 > - **Idées** : routines adaptatives, sons générés par IA, intégration Apple
 >   Watch
 >
-> J'ai créé le brief dans `.makit/brief.md` avec la research intégrée. Le Shaper
+> J'ai créé le brief dans `.ship/brief.md` avec la research intégrée. Le Shaper
 > pourra s'en servir pour découper ça en packages.

@@ -1,9 +1,9 @@
 ---
-name: makit:help
-description: "Affiche la liste des commandes makit disponibles"
+name: ship:help
+description: "Affiche la liste des commandes ship disponibles"
 ---
 
-# Commandes makit
+# Commandes ship
 
 Affiche cette aide pour l'utilisateur.
 
@@ -11,19 +11,19 @@ Affiche cette aide pour l'utilisateur.
 
 | Commande | Description |
 |----------|-------------|
-| `/makit:help` | Affiche cette aide |
-| `/makit:brainstorm` | Lance une session de brainstorming interactive |
-| `/makit:shape` | Lance le shaping d'un brief en packages Shape Up |
-| `/makit:status` | Affiche l'état du projet makit |
+| `/ship:help` | Affiche cette aide |
+| `/ship:brainstorm` | Lance une session de brainstorming interactive |
+| `/ship:shape` | Lance le shaping d'un brief en packages Shape Up |
+| `/ship:status` | Affiche l'état du projet ship |
 
-## Architecture makit
+## Architecture ship
 
-makit utilise une architecture à 3 couches:
+ship utilise une architecture à 3 couches:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ COMMANDS (workflow explicite)                               │
-│ L'utilisateur tape /makit:xxx pour lancer un workflow       │
+│ L'utilisateur tape /ship:xxx pour lancer un workflow       │
 └─────────────────────────────────────────────────────────────┘
                             │
                             ▼
@@ -41,17 +41,17 @@ makit utilise une architecture à 3 couches:
 
 ## Agents disponibles
 
-- **makit-brainstormer**: Transforme une idée vague en brief structuré
-- **makit-shaper**: Transforme un brief en packages Shape Up avec research, stack et requirements
-- **makit-planner**: Planifie l'implémentation (à venir)
-- **makit-verifier**: Vérifie la qualité (à venir)
+- **ship-brainstormer**: Transforme une idée vague en brief structuré
+- **ship-shaper**: Transforme un brief en packages Shape Up avec research, stack et requirements
+- **ship-planner**: Planifie l'implémentation (à venir)
+- **ship-verifier**: Vérifie la qualité (à venir)
 
 ## Skills disponibles
 
-- **makit-brainstorming**: Techniques de brainstorming (5 Whys, SCAMPER, Mind Mapping, etc.)
-- **makit-shaping**: Templates et guidelines pour le shaping de packages Shape Up
-- **makit-writing**: Guidelines de style markdown
+- **ship-brainstorming**: Techniques de brainstorming (5 Whys, SCAMPER, Mind Mapping, etc.)
+- **ship-shaping**: Templates et guidelines pour le shaping de packages Shape Up
+- **ship-writing**: Guidelines de style markdown
 
 ## Pour commencer
 
-Lance `/makit:brainstorm` pour démarrer une session de brainstorming sur ton idée.
+Lance `/ship:brainstorm` pour démarrer une session de brainstorming sur ton idée.

@@ -1,8 +1,8 @@
 ---
-name: makit-shaper
+name: ship-shaper
 description: "Transforme un brief en packages Shape Up avec research, stack et requirements."
 model: opus
-skills: makit-shaping, makit-writing
+skills: ship-shaping, ship-writing
 user-invocable: false
 ---
 
@@ -23,15 +23,15 @@ Tu es un Shaper. Tu prends un brief et tu produis les fondations d'un package Sh
 ## Outputs
 
 ```
-.makit/packages/<nom-package>/
+.ship/packages/<nom-package>/
 ├── research.md      # État de l'art, do's/don'ts, insights
 ├── stack.md         # Choix techniques justifiés
 └── requirements.md  # Exigences structurées et priorisées
 
-.makit/packages/index.md  # Index des packages (créer/mettre à jour)
+.ship/packages/index.md  # Index des packages (créer/mettre à jour)
 ```
 
-Utilise les templates dans `skills/makit-shaping/templates/` pour structurer ces documents.
+Utilise les templates dans `skills/ship-shaping/templates/` pour structurer ces documents.
 
 ---
 
@@ -59,15 +59,15 @@ Tant que les 3 fichiers ne sont pas écrits, tu continues. Pas de "voilà ce qu'
 
 ## Workflow
 
-1. **Lis le brief** (`.makit/brief.md` par défaut)
+1. **Lis le brief** (`.ship/brief.md` par défaut)
 2. **Valide avec l'utilisateur** : découpage, nommage, queries de recherche
 3. **Recherche** : WebSearch + exploration codebase → écris `research.md` et `stack.md`
 4. **Requirements** : questions basées sur la recherche → écris `requirements.md`
-5. **Index** : mets à jour `.makit/packages/index.md`
+5. **Index** : mets à jour `.ship/packages/index.md`
 
 ---
 
 ## Skills disponibles
 
-- **makit-shaping** : Templates et guidelines (`skills/makit-shaping/`)
-- **makit-writing** : Style markdown (`skills/makit-writing/`)
+- **ship-shaping** : Templates et guidelines (`skills/ship-shaping/`)
+- **ship-writing** : Style markdown (`skills/ship-writing/`)

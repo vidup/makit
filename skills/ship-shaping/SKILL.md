@@ -1,5 +1,5 @@
 ---
-name: makit-shaping
+name: ship-shaping
 description: "Templates et guidelines pour le shaping de packages Shape Up"
 user-invocable: false
 ---
@@ -13,7 +13,7 @@ Ce skill fournit les templates et guidelines pour la phase de shaping : transfor
 Le Shaper prépare le terrain pour le Planner. Il produit :
 
 ```
-.makit/packages/<nom-package>/
+.ship/packages/<nom-package>/
 ├── research.md      # État de l'art, do's/don'ts, insights
 ├── stack.md         # Décisions techniques, justifications
 └── requirements.md  # Exigences fonctionnelles et non-fonctionnelles

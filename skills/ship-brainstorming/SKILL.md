@@ -1,5 +1,5 @@
 ---
-name: makit-brainstorming
+name: ship-brainstorming
 description: "Techniques de brainstorming pour explorer et structurer des idées"
 user-invocable: false
 ---

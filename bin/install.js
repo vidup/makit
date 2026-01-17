@@ -19,7 +19,7 @@ Usage:
   npx cc-ship --help       Affiche cette aide
 
 Structure installée:
-  commands/makit/        Commandes de workflow (/makit:xxx)
+  commands/ship/        Commandes de workflow (/ship:xxx)
   agents/                Agents spécialisés
   skills/                Connaissances et techniques réutilisables
 `);
@@ -97,11 +97,11 @@ console.log(`
 ✅ Installation terminée!
 
 Commandes disponibles dans Claude Code:
-  /makit:help         Liste des commandes makit
-  /makit:brainstorm   Lance une session de brainstorming
-  /makit:status       Affiche l'état du projet
+  /ship:help         Liste des commandes ship
+  /ship:brainstorm   Lance une session de brainstorming
+  /ship:status       Affiche l'état du projet
 
 Pour commencer:
   1. Ouvre Claude Code dans ce répertoire
-  2. Tape /makit:help pour voir les commandes disponibles
+  2. Tape /ship:help pour voir les commandes disponibles
 `);

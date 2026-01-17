@@ -1,5 +1,5 @@
 ---
-name: makit-writing
+name: ship-writing
 description: "Guidelines de style pour la rédaction de documents markdown"
 user-invocable: false
 ---
@@ -107,7 +107,7 @@ Pour les insights ou références importantes :
 
 ## Structure des documents
 
-### Brief (`.makit/brief.md`)
+### Brief (`.ship/brief.md`)
 ```markdown
 # Brief : [Nom]
 
