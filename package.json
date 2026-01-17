@@ -1,0 +1,31 @@
+{
+  "name": "makit",
+  "version": "0.1.0",
+  "description": "Architecture 3 couches pour Claude Code: Commands -> Agents -> Skills",
+  "bin": {
+    "makit": "bin/install.js"
+  },
+  "files": [
+    "bin",
+    "commands",
+    "agents",
+    "skills"
+  ],
+  "keywords": [
+    "claude",
+    "claude-code",
+    "ai",
+    "brainstorming",
+    "shaping",
+    "productivity"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vdstack/makit"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

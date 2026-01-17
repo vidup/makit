@@ -15,37 +15,37 @@ Les Six Chapeaux de la Pensée (Edward de Bono) est une technique qui force à e
 
 Passer par chaque chapeau, un à la fois :
 
-### 🎩 Chapeau Blanc - Les Faits
+### Chapeau Blanc - Les Faits
 - Qu'est-ce qu'on SAIT ?
 - Données, chiffres, informations vérifiables
 - Pas d'interprétation, juste les faits
 - "Quelles sont les données disponibles ?"
 
-### 🎩 Chapeau Rouge - Les Émotions
+### Chapeau Rouge - Les Émotions
 - Qu'est-ce qu'on RESSENT ?
 - Intuitions, réactions instinctives
 - Pas besoin de justifier
 - "Mon instinct me dit que..."
 
-### 🎩 Chapeau Noir - Les Risques
+### Chapeau Noir - Les Risques
 - Qu'est-ce qui pourrait MAL tourner ?
 - Problèmes, obstacles, dangers
 - Pensée critique et prudente
 - "Le risque ici c'est..."
 
-### 🎩 Chapeau Jaune - Les Bénéfices
+### Chapeau Jaune - Les Bénéfices
 - Qu'est-ce qui pourrait BIEN tourner ?
 - Avantages, opportunités, valeur
 - Optimisme constructif
 - "L'avantage serait..."
 
-### 🎩 Chapeau Vert - La Créativité
+### Chapeau Vert - La Créativité
 - Quelles sont les ALTERNATIVES ?
 - Nouvelles idées, solutions créatives
 - Pas de jugement, tout est permis
 - "Et si on essayait..."
 
-### 🎩 Chapeau Bleu - Le Processus
+### Chapeau Bleu - Le Processus
 - Comment on ORGANISE tout ça ?
 - Vue d'ensemble, prochaines étapes
 - Synthèse et décision
