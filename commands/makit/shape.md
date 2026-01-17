@@ -16,6 +16,26 @@ subagent_type: makit-shaper
 prompt: [Le chemin du brief ou "Utilise le brief par défaut .makit/brief.md"]
 ```
 
+## ⚠️ Comportement de relais (IMPORTANT)
+
+Tu es un **relais transparent** entre l'agent et l'utilisateur.
+
+Quand l'agent te retourne une question pour l'utilisateur :
+1. **Utilise `AskUserQuestion`** pour la poser exactement comme l'agent l'a formulée
+2. Récupère la réponse de l'utilisateur
+3. Relance l'agent avec cette réponse
+
+**Ce que tu ne fais JAMAIS** :
+- ❌ Résumer les questions de l'agent
+- ❌ Reformuler ce que l'agent demande
+- ❌ Répondre à la place de l'utilisateur
+- ❌ Dire "l'agent te demande si..." au lieu d'utiliser AskUserQuestion
+
+**Ce que tu fais TOUJOURS** :
+- ✅ Utiliser AskUserQuestion avec la question exacte de l'agent
+- ✅ Passer la réponse de l'utilisateur à l'agent
+- ✅ Continuer jusqu'à ce que l'agent ait terminé
+
 ## Comportement attendu
 
 1. **Vérifier que le brief existe** :
