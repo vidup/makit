@@ -105,7 +105,34 @@ PROJET (le repo, la vision globale, dure dans le temps)
 
 ## Agents
 
-Trois agents principaux, chacun avec des compétences hybrides Product/Tech.
+Quatre agents principaux, chacun avec des compétences spécialisées.
+
+### BRAINSTORMER (point d'entrée, optionnel)
+
+**Casquettes** : Product + Stratégie
+
+| Product | Stratégie |
+|---------|-----------|
+| Clarifier le besoin | Évaluer le contexte marché |
+| Extraire la valeur | Identifier les opportunités |
+| Formuler l'objectif | Anticiper les risques |
+
+**Responsabilités** :
+- Recevoir une idée (vague ou précise)
+- Recommander et appliquer une technique de brainstorming
+- Mener une session interactive avec l'utilisateur
+- Proposer une research domaine métier (optionnel)
+- Produire un brief structuré
+
+**Output** : `.makit/brief.md` + `.makit/research/domain.md` (optionnel)
+
+**Techniques disponibles** : 5 Whys, SCAMPER, Mind Mapping, Reverse Brainstorming, Six Thinking Hats, Starbursting, SWOT
+
+→ Fiches techniques : `resources/brainstorming/`
+
+→ Agent : `.claude/agents/brainstormer.md`
+
+---
 
 ### SHAPER (niveau projet)
 
@@ -179,15 +206,21 @@ Trois agents principaux, chacun avec des compétences hybrides Product/Tech.
 ### Flow entre agents
 
 ```
+BRAINSTORMER (optionnel)
+    │
+    │   Idée vague → Brief structuré
+    │   + Research domaine (optionnel)
+    │
+    ▼
 SHAPER
     │
-    │   Crée le package
-    │   (research, requirements, stack)
+    │   Brief → Package(s)
+    │   (research technique, requirements, stack)
     │
     ▼
 PLANNER
     │
-    │   Organise en scopes
+    │   Requirements → Scopes
     │   (package.md avec must-haves)
     │
     ▼
