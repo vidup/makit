@@ -13,6 +13,7 @@ Affiche cette aide pour l'utilisateur.
 |----------|-------------|
 | `/makit:help` | Affiche cette aide |
 | `/makit:brainstorm` | Lance une session de brainstorming interactive |
+| `/makit:shape` | Lance le shaping d'un brief en packages Shape Up |
 | `/makit:status` | Affiche l'état du projet makit |
 
 ## Architecture makit
@@ -41,13 +42,14 @@ makit utilise une architecture à 3 couches:
 ## Agents disponibles
 
 - **makit-brainstormer**: Transforme une idée vague en brief structuré
-- **makit-shaper**: Découpe un brief en packages Shape Up (à venir)
+- **makit-shaper**: Transforme un brief en packages Shape Up avec research, stack et requirements
 - **makit-planner**: Planifie l'implémentation (à venir)
 - **makit-verifier**: Vérifie la qualité (à venir)
 
 ## Skills disponibles
 
 - **makit-brainstorming**: Techniques de brainstorming (5 Whys, SCAMPER, Mind Mapping, etc.)
+- **makit-shaping**: Templates et guidelines pour le shaping de packages Shape Up
 - **makit-writing**: Guidelines de style markdown
 
 ## Pour commencer
