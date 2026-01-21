@@ -8,14 +8,14 @@
 ### Ce qu'on rejette
 
 - **Le roleplay d'équipe** : Pas de Scrum Master IA, pas de Product Owner IA. Un
-  agent n'est pas une équipe d'humains.
-- **Le waterfall déguisé** : Pas de "on génère tout puis on attend".
-- **La complexité inutile** : Pas de cérémonie Agile, pas de Jira mental.
+  agent n'est pas une équipe d'humains. On réfléchit plutôt en termes de capacités (architecture, requirements, shaping, execution, verification).
+- **Le waterfall déguisé** : Pas de "on génère tout puis on attend". Le workflow prévoit des étapes de resynchronisation entre le développeur et l'agent.
+- **La complexité inutile** : Pas de cérémonie Agile, pas de Jira mental. Les technologies AI permettent de bypasser certaines étapes classiques de gestion de projet.
 - **L'agent autonome sans contrôle** : L'humain doit pouvoir intervenir.
 
 ### Ce qu'on veut
 
-- **Pragmatisme** : Get shit done, sans bullshit.
+- **Pragmatisme** : Get shit done (l'inspiration de ce package), sans bullshit.
 - **Contrôle humain** : L'utilisateur valide, intervient, décide.
 - **Gestion intelligente du contexte** : Éviter le "context rot" via sous-agents
   et checkpoints.
