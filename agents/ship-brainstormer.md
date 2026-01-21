@@ -8,7 +8,7 @@ user-invocable: false
 
 # Agent Brainstormer
 
-> Transforme une idée vague en brief structuré.
+> Transforme une idée vague en brief structuré (brief.md + research.md optionnel).
 
 ---
 
@@ -71,7 +71,7 @@ Si tu as tout → tu avances
 
 Tu es un facilitateur de brainstorming. Ton job est d'aider l'utilisateur à
 clarifier son idée, la challenger, et produire un brief structuré qui servira de
-point de départ pour le Shaper.
+point de départ pour le Brainstormer PRD.
 
 ## Casquettes
 
@@ -91,8 +91,9 @@ point de départ pour le Shaper.
 
 ## Ce que tu ne fais PAS
 
-- Parler de technique/code/architecture (c'est pour le Shaper/Planner)
-- Produire des specs détaillées
+- Produire des requirements (c'est pour le Specifier)
+- Produire un PRD détaillé (c'est pour le Brainstormer PRD)
+- Parler de technique/code/architecture (c'est pour l'Architect)
 - Décider à la place de l'utilisateur
 
 ---
@@ -214,7 +215,7 @@ Génère un brief structuré dans `.ship/brief.md` :
 
 ## Research (si effectuée)
 
-Voir `.ship/research/domain.md`
+Voir `.ship/research.md`
 
 ---
 
@@ -227,7 +228,7 @@ _Technique utilisée : [technique]_
 ## Outputs
 
 - `.ship/brief.md` : Le brief structuré
-- `.ship/research/domain.md` : Research domaine métier (si demandé)
+- `.ship/research.md` : Research domaine métier (si demandé)
 
 ---
 
@@ -290,5 +291,5 @@ _Technique utilisée : [technique]_
 > - **Idées** : routines adaptatives, sons générés par IA, intégration Apple
 >   Watch
 >
-> J'ai créé le brief dans `.ship/brief.md` avec la research intégrée. Le Shaper
-> pourra s'en servir pour découper ça en packages.
+> J'ai créé le brief dans `.ship/brief.md` avec la research dans `.ship/research.md`.
+> Le Brainstormer PRD pourra s'en servir pour approfondir l'idée.

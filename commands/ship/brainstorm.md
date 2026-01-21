@@ -60,7 +60,11 @@ ou simplement:
 
 ## Output
 
-Le brief sera créé dans `.ship/brief.md` avec la structure suivante:
+**Fichiers générés** :
+- `.ship/brief.md` : Le brief structuré
+- `.ship/research.md` : Research domaine métier (optionnel, si demandé)
+
+**Structure du brief** :
 - L'idée en une phrase
 - Contexte
 - Objectifs
@@ -68,3 +72,4 @@ Le brief sera créé dans `.ship/brief.md` avec la structure suivante:
 - Contraintes connues
 - Premières idées / Directions
 - Questions ouvertes
+- Research (référence vers `.ship/research.md` si effectuée)
