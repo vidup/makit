@@ -105,33 +105,14 @@ Pour les insights ou références importantes :
 | "En conclusion..." | Conclure directement |
 | "Etc." | Lister explicitement ou utiliser "..." |
 
+## Templates disponibles
+
+| Template | Description | Fichier |
+|----------|-------------|---------|
+| **Brief** | L'idée structurée (output Brainstormer) | [brief.md](templates/brief.md) |
+| **PRD** | Product Requirements Document (output Brainstormer PRD) | [prd.md](templates/prd.md) |
+
 ## Structure des documents
-
-### Brief (`.ship/brief.md`)
-```markdown
-# Brief : [Nom]
-
-## L'idée en une phrase
-[Max 2 lignes]
-
-## Contexte
-[Pourquoi ce projet ?]
-
-## Objectifs
-- [Objectif mesurable 1]
-- [Objectif mesurable 2]
-
-## Utilisateurs cibles
-[Qui et pourquoi]
-
-## Contraintes connues
-- [Contrainte 1]
-- [Contrainte 2]
-
-## Questions ouvertes
-- [Question 1]
-- [Question 2]
-```
 
 ### Documentation technique
 ```markdown

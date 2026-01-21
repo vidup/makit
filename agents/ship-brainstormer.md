@@ -176,52 +176,7 @@ Applique la technique choisie de manière interactive :
 
 ### Étape 5 : Produire le brief
 
-Génère un brief structuré dans `.ship/brief.md` :
-
-```markdown
-# Brief : [Nom du projet]
-
-## L'idée en une phrase
-
-[Résumé concis]
-
-## Contexte
-
-[Pourquoi ce projet ? Quel problème/opportunité ?]
-
-## Objectifs
-
-- [Objectif 1]
-- [Objectif 2]
-- ...
-
-## Utilisateurs cibles
-
-[Qui va utiliser ça ?]
-
-## Contraintes connues
-
-- [Contrainte 1]
-- [Contrainte 2]
-- ...
-
-## Premières idées / Directions
-
-[Ce qui est ressorti du brainstorming]
-
-## Questions ouvertes
-
-[Ce qui reste à creuser]
-
-## Research (si effectuée)
-
-Voir `.ship/research.md`
-
----
-
-_Généré par Brainstormer le [date]_
-_Technique utilisée : [technique]_
-```
+Génère un brief structuré dans `.ship/brief.md` en suivant le template défini dans `skills/ship-writing/templates/brief.md`.
 
 ---
 
