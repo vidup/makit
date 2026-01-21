@@ -258,7 +258,7 @@ voulez-vous que je propose ?"
 | Définir les scopes (livrables indépendants) |
 | Pour chaque scope, définir les must-haves |
 | Expliciter ce qui est "not included" |
-| Documenter les choix techniques locaux |
+| Documenter les choix techniques locaux: un plan d'implémentation, en somme |
 | Définir les critères de vérification |
 
 **Input** : `.ship/mapping.md` + `.ship/prd.md` + `.ship/architecture.md`
@@ -296,13 +296,16 @@ voulez-vous que je propose ?"
 BRAINSTORMER
     │
     │   "C'est quoi l'idée ?"
-    │   → brief.md
+    │   → brief.md + research.md (optionnel)
     │
+    │
+    │   "Partie 2: PRD"
+    │   → prd.md
     ▼
 SPECIFIER
     │
-    │   "Quelles sont les exigences ?"
-    │   → prd.md
+    │   "Quelles sont les exigences fonctionnelles, non-fonctionnelles et contraintes induites de ce prd et ces recherches ?"
+    │   → requirements.md
     │
     ▼
 ARCHITECT ←────── (ou fourni par le dev)
@@ -313,7 +316,7 @@ ARCHITECT ←────── (ou fourni par le dev)
     ▼
 SPLITTER
     │
-    │   "Comment découper ?"
+    │   "Comment découper en packages livrables, afin d'itérer vers un produit complet ?"
     │   → mapping.md + packages/index.md
     │
     ▼
@@ -357,8 +360,8 @@ Chaque agent mène UNE conversation avec l'utilisateur :
 **Avantages** :
 - Chaque étape peut être refaite indépendamment
 - Plus facile à debugger (on sait où ça a merdé)
-- L'utilisateur peut intervenir à chaque étape
-- Possibilité de fournir certains outputs manuellement (ex: architecture)
+- L'utilisateur peut intervenir à chaque étape: on n'est pas sur du vibe coding ici !
+- Possibilité de fournir certains outputs manuellement (ex: architecture, brief, packages, etc.)
 
 ---
 
@@ -385,6 +388,7 @@ Chaque sous-agent = contexte vierge = pas de dégradation
 - L'agent principal orchestre et communique avec l'humain
 - Les sous-agents exécutent avec un contexte frais
 - Les fichiers `.ship/` servent de mémoire persistante entre sessions
+- Quand un sous agent a besoin d'informations complémentaires, il peut les demander à l'agent principal, qui va les transmettre à l'utilisateur en batchant les questions des AskUserQuestion Tool calls (pour éviter les allez-retours incessants).
 
 ---
 
@@ -399,7 +403,7 @@ Chaque sous-agent = contexte vierge = pas de dégradation
 ### L'humain dans la boucle
 
 - Validation à chaque étape
-- Possibilité de fournir des outputs manuellement (ex: architecture)
+- Possibilité de fournir des outputs manuellement (ex: architecture, brief, packages, etc.)
 - Possibilité d'intervenir à tout moment
 
 ### Shaping > Coding
