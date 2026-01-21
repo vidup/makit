@@ -60,7 +60,8 @@ PROJET (le repo, la vision globale, dure dans le temps)
 .ship/
 ├── brief.md                      # Output brainstormer
 ├── research.md                   # Output brainstormer (futur researcher) (recherche domaine métier)
-├── prd.md                        # Output specifier (exigences globales)
+├── prd.md                        # Output brainstormer (exigences globales)
+├── requirements.md               # Output specifier (exigences globales)
 ├── architecture.md               # Output architect (ou fourni par le dev)
 └── packages/
     ├── mapping.md                    # Output splitter (exigences ↔ packages)
@@ -176,6 +177,26 @@ Thinking Hats, Starbursting, SWOT
 
 ---
 
+### BRAINSTORMER 2 - PRD
+
+**Discussion** : "Comment détailler l'idée en un PRD ?"
+
+| Responsabilités |
+|-----------------|
+| Analyser le brief |
+| Poser des questions pour clarifier les besoins |
+| Identifier les fonctionnalités |
+| Creuser les fonctionnalités identifiées |
+| Produire un PRD qui est une version plus détaillée et plus précise du sujet.
+
+**Input** : `.ship/brief.md` + `.ship/research.md` (optionnel)
+
+**Output** : `.ship/prd.md`
+
+**Tools** : AskUserQuestion Tool
+
+---
+
 ### SPECIFIER
 
 **Discussion** : "Quelles sont les exigences à satisfaire ?"
@@ -189,9 +210,9 @@ Thinking Hats, Starbursting, SWOT
 | Documenter les contraintes |
 | Prioriser (Must/Should/Nice-to-have) |
 
-**Input** : `.ship/brief.md` + `.ship/research.md` (optionnel)
+**Input** : `.ship/research.md` (optionnel) + `.ship/prd.md`
 
-**Output** : `.ship/prd.md`
+**Output** : `.ship/requirements.md`
 
 **Tools** : AskUserQuestion Tool
 
@@ -211,13 +232,14 @@ Thinking Hats, Starbursting, SWOT
 | Identifier les risques techniques |
 | Documenter les points d'intégration |
 
-**Input** : `.ship/prd.md` + codebase existante
+**Input** : `.ship/requirements.md` (surtout) + `.ship/prd.md` (au cas où) + codebase existante
 
 **Output** : `.ship/architecture.md`
 
 **Note** : Cette étape peut être court-circuitée si le dev fournit directement
 l'architecture. L'agent doit demander : "Avez-vous une architecture en tête ou
 voulez-vous que je propose ?"
+L'architecture est très dépendante des exigences NON FONCTIONNELLES. Il faut donc que ces dernières soient précises et mesurables (ex: disponibilité 99%, p90 100ms, etc.). Sinon ça peut partir dans tous les sens.
 
 **Tools** : All tools. The architect is humble, he knows he can find information on the web about the kind of standard architectures for the kind of project he is working on.
 ---
@@ -235,9 +257,9 @@ voulez-vous que je propose ?"
 | Identifier les dépendances entre packages |
 | Suggérer un ordre d'implémentation |
 
-**Input** : `.ship/prd.md` + `.ship/architecture.md`
+**Input** : `.ship/requirements.md` + `.ship/architecture.md` + `.ship/prd.md`
 
-**Output** : `.ship/mapping.md` + `.ship/packages/index.md`
+**Output** : `.ship/mapping.md`
 
 **Techniques de découpage** :
 - Par domaine métier
@@ -261,7 +283,7 @@ voulez-vous que je propose ?"
 | Documenter les choix techniques locaux: un plan d'implémentation, en somme |
 | Définir les critères de vérification |
 
-**Input** : `.ship/mapping.md` + `.ship/prd.md` + `.ship/architecture.md`
+**Input** : `.ship/mapping.md` + `.ship/prd.md` + `.ship/architecture.md` + `.ship/requirements.md`
 
 **Output** : `.ship/packages/<nom>/package.md`
 
@@ -298,9 +320,12 @@ BRAINSTORMER
     │   "C'est quoi l'idée ?"
     │   → brief.md + research.md (optionnel)
     │
+    ▼
+BRAINSTORMER 2 (PRD)
     │
-    │   "Partie 2: PRD"
+    │   "Comment détailler l'idée ?"
     │   → prd.md
+    │
     ▼
 SPECIFIER
     │
