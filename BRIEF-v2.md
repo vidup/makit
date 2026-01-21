@@ -8,7 +8,7 @@
 ### Ce qu'on rejette
 
 - **Le roleplay d'équipe** : Pas de Scrum Master IA, pas de Product Owner IA. Un
-  agent n'est pas une équipe d'humains.
+  agent n'est pas une équipe d'humains. On réfléchit plutôt en termes de capacités (architecture, requirements, shaping, execution, verification) et d'ouputs (les livrables)
 - **Le waterfall déguisé** : Pas de "on génère tout puis on attend".
 - **La complexité inutile** : Pas de cérémonie Agile, pas de Jira mental.
 - **L'agent autonome sans contrôle** : L'humain doit pouvoir intervenir.
@@ -16,24 +16,26 @@
 
 ### Ce qu'on veut
 
-- **Pragmatisme** : Get shit done, sans bullshit.
+- **Pragmatisme** : Get shit done (l'inspiration de ce package), sans bullshit.
 - **Contrôle humain** : L'utilisateur valide, intervient, décide.
-- **Séparation des discussions** : Chaque étape = une conversation distincte.
+- **Séparation des discussions** : Chaque étape = une conversation distincte. L'idée est de pouvoir clean le contexte entre chaque étape (et donc de construire la connaissance intermédiaire permettant à l'agent d'enchaîner sans avoir à surcharger sa fenêtre de contexte).
 - **Gestion intelligente du contexte** : Éviter le "context rot" via sous-agents
   et checkpoints.
 - **Simplicité** : Moins de détails inutiles = agent plus efficace.
 - **Mémoire persistante** : Reprendre là où on en était, toujours.
 - **Shaping avant coding** : On creuse la fonctionnalité à fond, ensuite
-  l'implémentation suit.
+  l'implémentation suit les guidelines (qu'on peut générer ou fournir).
 
-### Approche Shape Up
+### Approche "Shape Up" (pour la gestion des scopes).
 
 Chaque **scope** doit être :
 
 - **Déployable indépendamment** : Une fois terminé, il apporte de la valeur en
-  soi
+  soi. 
 - **Vérifiable seul** : Pas besoin d'attendre le scope suivant pour valider
-- **Cuttable** : On peut couper les scopes de fin si retard
+
+En théorie, dans Shape Up, on fonctionne de cette manière pour être capable d'exécuter du scope hammering (adapter le scope en cas de retard).
+Ici, la notion de retard n'est pas pertinente: le développeur et l'agent travaillent en une seule grosse session. En revanche, les scopes permettent de créer des moments d'échanges réguliers entre le développeur et l'agent, sur la base d'un morceau de fonctionnalité réellement terminé, et vérifiable.
 
 **Règle d'or** : Le scope N est vérifiable seul. Le scope N+1 peut dépendre de
 N, mais jamais l'inverse.
@@ -57,41 +59,62 @@ PROJET (le repo, la vision globale, dure dans le temps)
 ```
 .ship/
 ├── brief.md                      # Output brainstormer
+├── research.md                   # Output brainstormer (futur researcher) (recherche domaine métier)
 ├── prd.md                        # Output specifier (exigences globales)
 ├── architecture.md               # Output architect (ou fourni par le dev)
-├── mapping.md                    # Output splitter (exigences ↔ packages)
-│
 └── packages/
-    ├── index.md                  # Index de tous les packages
-    │
+    ├── mapping.md                    # Output splitter (exigences ↔ packages)
     ├── auth/
     │   └── package.md            # Output shaper
+        └── verification.md       # input for verifier (critères de vérification)
     │
     └── dashboard/
         └── package.md            # Output shaper
+        └── verification.md       # input for verifier (critères de vérification)
 ```
 
 ### Contenu des fichiers
 
 **`brief.md`** : L'idée structurée (output brainstormer)
 
+En résumé, c'est un un Business Requirements Document (BRD, qui peut être fourni)
+
 - Résumé de l'idée en une phrase
 - Contexte (pourquoi, problème/opportunité)
 - Objectifs
 - Utilisateurs cibles
 - Contraintes connues
-- Premières directions
+- Premières directions: features de haut niveau résultant de la recherche et du brainstorming avec le développeur.
 - Questions ouvertes
 
-**`prd.md`** : Les exigences globales (output specifier)
+C'est une approche plus orientée "product" que "technique".
 
+**`research.md`** : La recherche domaine métier (output du brainstormer, input du specifier)
+
+L'idée ici est de rechercher sur le web (et dans la connaissance du modèle) des informations sur le domaine métier du sujet. C'est une étape optionnelle (qui a lieu en même temps que le brainstorming pour aiguiller la recherche), qui peut être sautée si le dev a déjà une connaissance suffisante du domaine. Si elle est déclenchée, l'agent va lancer plusieurs queries de recherche pour construire une connaissance des pratiques, patterns, concurrents, solutions existantes, opportunités.
+
+- State of the art
+- Do's and don'ts
+- Références, liens, exemples
+
+**`prd.md`** : Le Product Requirements Document (PRD)
+
+En résumé, c'est un Product Requirements Document (PRD).
+Ici, l'agent va creuser avec le dev les questions ouvertes du BRD, creuser les fonctionnalités identifiées, et produire un PRD qui est une version plus détaillée et plus précise du sujet..
+Concrètement, on cherche à créer un brief +++.
+
+**`requirements.md`** : Les exigences globales (output du specifier, input du shaper)
+
+En résumé, c'est un Software Requirements Specification (SRS).
 - Exigences fonctionnelles (ce que ça fait)
 - Exigences non-fonctionnelles (qualité, performance, sécurité)
 - Contraintes (techniques, business, réglementaires)
 - Priorités (Must/Should/Nice-to-have)
 - Critères d'acceptation globaux
 
-**`architecture.md`** : La structure technique (output architect ou fourni)
+Ici, on transforme les besoins identifiés précédemment en exigences réelles. C'est une approche "technique" d'organisation du sujet (sans rentrer dans les détails d'implémentation).
+
+**`architecture.md`** : La structure technique (output du architect ou fourni par le dev, input du shaper)
 
 - Vue d'ensemble de l'architecture
 - Composants principaux et leurs responsabilités
@@ -99,21 +122,30 @@ PROJET (le repo, la vision globale, dure dans le temps)
 - Points d'intégration
 - Risques techniques et mitigations
 
-**`mapping.md`** : Le découpage (output splitter)
+**`packages/mapping.md`** : Le découpage (output du splitter, input du shaper)
 
 - Liste des packages identifiés
 - Pour chaque package : périmètre et exigences couvertes
 - Dépendances entre packages
 - Ordre suggéré d'implémentation
 
-**`package.md`** : La planification d'UN package (output shaper)
+**`package.md`** : La planification d'UN package (output du shaper, input du executor)
 
-- Vision du package (le "quoi" et le "pourquoi")
+- Vision du package (rappeler le "quoi" et le "pourquoi")
 - Exigences couvertes (référence au PRD)
 - Scopes ordonnés avec must-haves
 - Not included (ce qui est explicitement hors scope)
-- Choix techniques locaux (si différents de l'archi globale)
-- Critères de vérification (pour le verifier)
+- Choix techniques locaux (si complémentaires des informations de l'archi globale)
+
+**`verification.md`** : Les critères de vérification (output du shaper, input du executor & du verifier)
+
+- Critères de vérification
+Certains critères demandent une intervention humaine (pour vérifier l'UI, par exemple). Dans ce cas, l'agent va déclencher un AskUserQuestion Tool call pour obtenir une vérification manuelle du dev.
+Chaque critère a un status: pending, passed, failed.
+Chaque critère a un critère de décision: manual, auto.
+Chaque critère a un niveaua de bloquage: blocking, warning, info.
+
+Ces critères doivent être écris en "yaml" dans le markdown.
 
 ---
 
@@ -135,10 +167,12 @@ Six agents, chacun responsable d'une discussion distincte.
 
 **Input** : Idée de l'utilisateur
 
-**Output** : `.ship/brief.md`
+**Output** : `.ship/brief.md` & `.ship/research.md` (optionnel)
 
 **Techniques** : 5 Whys, SCAMPER, Mind Mapping, Reverse Brainstorming, Six
 Thinking Hats, Starbursting, SWOT
+
+**Tools** : AskUserQuestion Tool & Search Tool
 
 ---
 
@@ -155,9 +189,11 @@ Thinking Hats, Starbursting, SWOT
 | Documenter les contraintes |
 | Prioriser (Must/Should/Nice-to-have) |
 
-**Input** : `.ship/brief.md`
+**Input** : `.ship/brief.md` + `.ship/research.md` (optionnel)
 
 **Output** : `.ship/prd.md`
+
+**Tools** : AskUserQuestion Tool
 
 **Note** : Le specifier ne décide pas du "comment", seulement du "quoi".
 
@@ -183,6 +219,7 @@ Thinking Hats, Starbursting, SWOT
 l'architecture. L'agent doit demander : "Avez-vous une architecture en tête ou
 voulez-vous que je propose ?"
 
+**Tools** : All tools. The architect is humble, he knows he can find information on the web about the kind of standard architectures for the kind of project he is working on.
 ---
 
 ### SPLITTER
