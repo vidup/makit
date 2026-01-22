@@ -111,6 +111,8 @@ Pour les insights ou références importantes :
 |----------|-------------|---------|
 | **Brief** | L'idée structurée (output Brainstormer) | [brief.md](templates/brief.md) |
 | **PRD** | Product Requirements Document (output Brainstormer PRD) | [prd.md](templates/prd.md) |
+| **Package** | Planification d'un package en scopes (output Shaper) | [package.md](templates/package.md) |
+| **Verification** | Critères de vérification par scope (output Shaper) | [verification.md](templates/verification.md) |
 
 ## Structure des documents
 
