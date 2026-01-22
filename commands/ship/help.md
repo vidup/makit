@@ -3,55 +3,102 @@ name: ship:help
 description: "Affiche la liste des commandes ship disponibles"
 ---
 
-# Commandes ship
+# Ship v2 - Aide
 
-Affiche cette aide pour l'utilisateur.
+Un toolkit pour augmenter Claude Code avec un workflow pragmatique centré sur
+l'interaction avec l'humain.
 
-## Commandes disponibles
+## Philosophie
 
-| Commande | Description |
-|----------|-------------|
-| `/ship:help` | Affiche cette aide |
-| `/ship:brainstorm` | Lance une session de brainstorming interactive |
-| `/ship:shape` | Lance le shaping d'un brief en packages Shape Up |
-| `/ship:status` | Affiche l'état du projet ship |
+- **Pragmatisme** : Get shit done, sans bullshit
+- **Contrôle humain** : L'utilisateur valide, intervient, décide
+- **Shaping avant coding** : On creuse la fonctionnalité à fond, ensuite
+  l'implémentation suit
 
-## Architecture ship
+---
 
-ship utilise une architecture à 3 couches:
+## Commandes par phase
+
+### Phase 1 - Idéation
+
+| Commande           | Description                                      |
+| ------------------ | ------------------------------------------------ |
+| `/ship:brainstorm` | Transforme une idée vague en brief structuré     |
+| `/ship:prd`        | Creuse le brief en Product Requirements Document |
+
+### Phase 2 - Spécification
+
+| Commande          | Description                                |
+| ----------------- | ------------------------------------------ |
+| `/ship:specify`   | Transforme le PRD en exigences (SRS)       |
+| `/ship:architect` | Propose ou valide l'architecture technique |
+| `/ship:split`     | Découpe en packages livrables              |
+
+### Phase 3 - Exécution
+
+| Commande        | Description                   |
+| --------------- | ----------------------------- |
+| `/ship:shape`   | Planifie UN package en scopes |
+| `/ship:execute` | Implémente le scope courant   |
+| `/ship:verify`  | Vérifie l'implémentation      |
+
+### Orchestration
+
+| Commande       | Description                         |
+| -------------- | ----------------------------------- |
+| `/ship:flow`   | Enchaîne les étapes automatiquement |
+| `/ship:status` | Affiche l'état du projet            |
+| `/ship:help`   | Affiche cette aide                  |
+
+---
+
+## Flow
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│ COMMANDS (workflow explicite)                               │
-│ L'utilisateur tape /ship:xxx pour lancer un workflow       │
-└─────────────────────────────────────────────────────────────┘
-                            │
-                            ▼
-┌─────────────────────────────────────────────────────────────┐
-│ AGENTS (exécuteurs spécialisés)                             │
-│ Reçoivent des instructions + ont accès à des skills         │
-└─────────────────────────────────────────────────────────────┘
-                            │
-                            ▼
-┌─────────────────────────────────────────────────────────────┐
-│ SKILLS (connaissance + outils réutilisables)                │
-│ Techniques, méthodologies, scripts - partagés entre agents  │
-└─────────────────────────────────────────────────────────────┘
+BRAINSTORM → PRD → SPECIFY → ARCHITECT → SPLIT
+                                          ↓
+                    ┌─────────────────────┘
+                    ↓
+              Pour CHAQUE package:
+              SHAPE → EXECUTE ←→ VERIFY
 ```
 
-## Agents disponibles
+---
 
-- **ship-brainstormer**: Transforme une idée vague en brief structuré
-- **ship-shaper**: Transforme un brief en packages Shape Up avec research, stack et requirements
-- **ship-planner**: Planifie l'implémentation (à venir)
-- **ship-verifier**: Vérifie la qualité (à venir)
+## Structure des fichiers
 
-## Skills disponibles
+```
+.ship/
+├── brief.md                      # Output brainstormer
+├── research.md                   # Output brainstormer (optionnel)
+├── prd.md                        # Output brainstormer-prd
+├── requirements.md               # Output specifier (SRS)
+├── architecture.md               # Output architect
+└── packages/
+    ├── mapping.md                # Output splitter
+    └── <nom>/
+        ├── package.md            # Output shaper
+        └── verification.md       # Output shaper
+```
 
-- **ship-brainstorming**: Techniques de brainstorming (5 Whys, SCAMPER, Mind Mapping, etc.)
-- **ship-shaping**: Templates et guidelines pour le shaping de packages Shape Up
-- **ship-writing**: Guidelines de style markdown
+---
+
+## Agents
+
+| Agent                 | Rôle                                                       |
+| --------------------- | ---------------------------------------------------------- |
+| ship-brainstormer     | Transforme une idée vague en brief structuré               |
+| ship-brainstormer-prd | Creuse le brief en PRD détaillé                            |
+| ship-specifier        | Définit les exigences fonctionnelles et non-fonctionnelles |
+| ship-architect        | Propose ou valide l'architecture technique                 |
+| ship-splitter         | Découpe en packages livrables                              |
+| ship-shaper           | Planifie un package en scopes                              |
+| ship-executor         | Implémente le scope courant                                |
+| ship-verifier         | Vérifie l'implémentation                                   |
+
+---
 
 ## Pour commencer
 
-Lance `/ship:brainstorm` pour démarrer une session de brainstorming sur ton idée.
+- `/ship:brainstorm` pour démarrer un nouveau projet
+- `/ship:status` pour voir où tu en es
