@@ -76,9 +76,11 @@ Par defaut -> Layered (Clean Architecture / Hexagonal)
 
 ## Templates disponibles
 
+Les templates sont dans le skill `ship-writing` :
+
 | Template | Description | Fichier |
 |----------|-------------|---------|
-| **Architecture** | Format complet du architecture.md | [architecture.md](templates/architecture.md) |
+| **Architecture** | Format complet du architecture.md | `skills/ship-writing/templates/architecture.md` |
 
 ## Mapping exigences NF -> solutions
 

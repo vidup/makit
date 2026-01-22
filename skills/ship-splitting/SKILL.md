@@ -240,6 +240,8 @@ Avant de finaliser le mapping.md :
 
 ## Templates disponibles
 
+Les templates sont dans le skill `ship-writing` :
+
 | Template | Description | Fichier |
 |----------|-------------|---------|
-| **Mapping** | Format complet du mapping.md | [mapping.md](templates/mapping.md) |
+| **Mapping** | Format complet du mapping.md | `skills/ship-writing/templates/mapping.md` |

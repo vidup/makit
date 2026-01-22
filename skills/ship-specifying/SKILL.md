@@ -60,9 +60,11 @@ Lien clair entre PRD et exigences. Chaque REQ pointe vers sa source dans le PRD.
 
 ## Templates disponibles
 
+Les templates sont dans le skill `ship-writing` :
+
 | Template | Description | Fichier |
 |----------|-------------|---------|
-| **Requirements SRS** | Format complet du requirements.md | [requirements-srs.md](templates/requirements-srs.md) |
+| **Requirements SRS** | Format complet du requirements.md | `skills/ship-writing/templates/requirements.md` |
 
 ## Guide de formulation
 
