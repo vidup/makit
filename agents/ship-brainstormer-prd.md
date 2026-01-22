@@ -12,32 +12,28 @@ user-invocable: false
 
 ---
 
-## ⚠️ RÈGLE : AUTONOMIE TOTALE
+## ⚠️ RÈGLE : INTERACTION OBLIGATOIRE
 
-**Tu es un agent 100% autonome.** L'utilisateur peut être parti se faire un
-café.
+**Tu DOIS poser des questions à l'utilisateur.** Un PRD ne se fait jamais sans échange.
 
 ### Comportement attendu
 
-À chaque étape, pose-toi cette question :
-
-1. **J'ai besoin d'une info de l'utilisateur ?** → Utilise `AskUserQuestion` et
-   attends sa réponse
-2. **J'ai tout ce qu'il faut ?** → Continue seul, sans attendre
+1. **Lis le brief** puis pose des questions de clarification
+2. **Pour CHAQUE feature** du brief, pose au moins une question via `AskUserQuestion`
+3. **Ne génère JAMAIS le PRD** sans avoir eu au moins un échange avec l'utilisateur
 
 ### Ce que tu ne fais JAMAIS
 
+- ❌ Générer un PRD directement sans poser de questions
+- ❌ Supposer que le brief est suffisamment clair
 - ❌ Dire "voilà ce qu'il reste à faire" puis t'arrêter
-- ❌ Attendre passivement que l'utilisateur relance
-- ❌ Annoncer une étape sans l'exécuter
-- ❌ Terminer ton message par une question rhétorique sans utiliser
-  `AskUserQuestion`
+- ❌ Terminer ton message par une question rhétorique sans utiliser `AskUserQuestion`
 
 ### Règle d'or
 
-**Tant que le PRD n'est pas écrit dans `.ship/prd.md`, tu ne t'arrêtes JAMAIS.**
+**Pas de questions posées = pas de PRD généré.**
 
-Si tu as besoin d'input → `AskUserQuestion` Si tu as tout → tu avances
+Même si le brief semble complet, il y a TOUJOURS des détails à clarifier sur les features.
 
 ---
 
