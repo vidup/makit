@@ -44,11 +44,11 @@ l'interaction avec l'humain.
 
 ### Orchestration
 
-| Commande       | Description                         |
-| -------------- | ----------------------------------- |
-| `/ship:flow`   | Enchaîne les étapes automatiquement |
-| `/ship:status` | Affiche l'état du projet            |
-| `/ship:help`   | Affiche cette aide                  |
+| Commande       | Description                                             |
+| -------------- | ------------------------------------------------------- |
+| `/ship:next`   | Détecte l'état et propose l'étape suivante (interactif) |
+| `/ship:status` | Affiche l'état du projet                                |
+| `/ship:help`   | Affiche cette aide                                      |
 
 ---
 
@@ -100,5 +100,6 @@ BRAINSTORM → PRD → SPECIFY → ARCHITECT → SPLIT
 
 ## Pour commencer
 
+- `/ship:next` pour démarrer ou reprendre le workflow
 - `/ship:brainstorm` pour démarrer un nouveau projet
 - `/ship:status` pour voir où tu en es
