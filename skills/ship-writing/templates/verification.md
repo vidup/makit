@@ -1,21 +1,29 @@
-# Vérification : [Nom du package]
+# Verification : [Nom du package]
 
-## Structure des critères
+## Structure des criteres
 
 ```yaml
 criteria:
   - id: VER-001
     scope: scope-1
-    description: "Description du critère"
-    decision: auto | manual      # auto = vérifiable par l'agent, manual = intervention humaine
+    description: "Description du critere"
+    decision: auto | manual      # auto = verifiable par l'agent, manual = intervention humaine
     blocking: blocking | warning | info
     status: pending | passed | failed
-    notes: "Notes optionnelles"
+    # Champs pour decision: auto
+    command: "commande a executer"  # optionnel, pour verifications auto
+    threshold: 80                    # optionnel, seuil numerique
+    # Champs pour decision: manual
+    context: "Contexte pour la verification manuelle"  # optionnel
+    # Champs remplis par le Verifier
+    result: null                     # details du resultat
+    user_response: null              # reponse utilisateur si manual
+    verified_at: null                # date de verification
 ```
 
 ---
 
-## Critères par scope
+## Criteres par scope
 
 ### Scope 1 : [Nom du scope]
 
@@ -23,17 +31,31 @@ criteria:
 criteria:
   - id: VER-S1-001
     scope: scope-1
-    description: "[Critère fonctionnel vérifiable automatiquement]"
+    description: "Les tests unitaires passent"
     decision: auto
     blocking: blocking
     status: pending
+    command: "pnpm test"
+    result: null
 
   - id: VER-S1-002
     scope: scope-1
-    description: "[Critère UI nécessitant vérification humaine]"
+    description: "L'UI est conforme a la maquette"
     decision: manual
     blocking: blocking
     status: pending
+    context: "Comparer avec la maquette Figma: [URL]"
+    user_response: null
+
+  - id: VER-S1-003
+    scope: scope-1
+    description: "Le code coverage est > 80%"
+    decision: auto
+    blocking: warning
+    status: pending
+    command: "pnpm coverage"
+    threshold: 80
+    result: null
 ```
 
 ---
@@ -44,29 +66,60 @@ criteria:
 criteria:
   - id: VER-S2-001
     scope: scope-2
-    description: "[Critère]"
+    description: "[Critere]"
     decision: auto
     blocking: blocking
     status: pending
+    command: "[commande]"
+    result: null
 ```
 
 ---
 
-## Résumé des critères
+## Resume des criteres
 
-| Scope | Total | Auto | Manual | Blocking | Status |
-|-------|-------|------|--------|----------|--------|
-| scope-1 | 2 | 1 | 1 | 2 | pending |
-| scope-2 | 1 | 1 | 0 | 1 | pending |
+| Scope | Total | Auto | Manual | Blocking | Warning | Status |
+|-------|-------|------|--------|----------|---------|--------|
+| scope-1 | 3 | 2 | 1 | 2 | 1 | pending |
+| scope-2 | 1 | 1 | 0 | 1 | 0 | pending |
 
 ---
 
-## Log de vérification
+## Log de verification
 
-| Date | Scope | Critère | Result | Notes |
+| Date | Scope | Critere | Result | Notes |
 |------|-------|---------|--------|-------|
 | - | - | - | - | - |
 
 ---
 
-_Généré par Shaper le [date]_
+## Rapport de verification
+
+**Scope** : [Nom du scope]
+**Date** : [Date]
+**Resultat global** : [PASS | FAIL | PASS_WITH_WARNINGS]
+
+### Resume
+
+| Niveau | Total | Passed | Failed |
+|--------|-------|--------|--------|
+| Blocking | X | Y | Z |
+| Warning | X | Y | Z |
+
+### Passed
+
+- [x] **VER-001** : [description]
+
+### Failed
+
+- [ ] **VER-002** : [description]
+  - **Probleme** : [details]
+  - **Action requise** : [suggestion]
+
+### Warnings
+
+- [!] **VER-003** : [description] ([valeur observee])
+
+---
+
+_Genere par Shaper le [date]_
