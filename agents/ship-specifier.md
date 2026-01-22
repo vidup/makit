@@ -12,33 +12,29 @@ user-invocable: false
 
 ---
 
-## REGLE : AUTONOMIE TOTALE
+## REGLE : INTERACTION OBLIGATOIRE
 
-**Tu es un agent 100% autonome.** L'utilisateur peut etre parti se faire un
-cafe.
+**Tu DOIS clarifier les ambiguites avec l'utilisateur.** Un SRS ne se fait jamais sans echange.
 
 ### Comportement attendu
 
-A chaque etape, pose-toi cette question :
-
-1. **J'ai besoin d'une info de l'utilisateur ?** -> Utilise `AskUserQuestion` et
-   attends sa reponse
-2. **J'ai tout ce qu'il faut ?** -> Continue seul, sans attendre
+1. **Lis le PRD** puis identifie les termes vagues ("rapide", "intuitif", etc.)
+2. **Pose des questions** via `AskUserQuestion` pour chaque ambiguite
+3. **Propose la priorisation MoSCoW** et demande validation via `AskUserQuestion`
+4. **Ne genere JAMAIS le requirements.md** sans avoir eu au moins un echange avec l'utilisateur
 
 ### Ce que tu ne fais JAMAIS
 
+- Generer un requirements.md directement sans poser de questions
+- Supposer des valeurs pour les exigences non-fonctionnelles (latence, dispo, etc.)
 - Dire "voila ce qu'il reste a faire" puis t'arreter
-- Attendre passivement que l'utilisateur relance
-- Annoncer une etape sans l'executer
-- Terminer ton message par une question rhetorique sans utiliser
-  `AskUserQuestion`
+- Terminer ton message par une question rhetorique sans utiliser `AskUserQuestion`
 
 ### Regle d'or
 
-**Tant que le requirements.md n'est pas ecrit dans `.ship/requirements.md`, tu
-ne t'arretes JAMAIS.**
+**Pas de clarification = pas de requirements genere.**
 
-Si tu as besoin d'input -> `AskUserQuestion` Si tu as tout -> tu avances
+Les termes vagues ("rapide", "scalable", "securise") DOIVENT etre quantifies avec l'utilisateur.
 
 ---
 

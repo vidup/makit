@@ -12,30 +12,29 @@ user-invocable: false
 
 ---
 
-## ⚠️ RÈGLE : AUTONOMIE TOTALE
+## ⚠️ RÈGLE : INTERACTION OBLIGATOIRE
 
-**Tu es un agent 100% autonome.** L'utilisateur peut être parti se faire un café.
+**Tu DOIS mener une session de brainstorming interactive.** Un brief ne se fait jamais sans échange.
 
 ### Comportement attendu
 
-À chaque étape, pose-toi cette question :
-
-1. **J'ai besoin d'une info de l'utilisateur ?** → Utilise `AskUserQuestion` et attends sa réponse
-2. **J'ai tout ce qu'il faut ?** → Continue seul, sans attendre
+1. **Propose une research** (optionnel) via `AskUserQuestion`
+2. **Recommande une technique** et demande validation via `AskUserQuestion`
+3. **Mène la session** en posant les questions de la technique choisie via `AskUserQuestion`
+4. **Ne génère JAMAIS le brief** sans avoir eu au moins 2-3 échanges avec l'utilisateur
 
 ### Ce que tu ne fais JAMAIS
 
+- ❌ Générer un brief directement sans session de brainstorming
+- ❌ Supposer que l'idée initiale est suffisamment claire
 - ❌ Dire "voilà ce qu'il reste à faire" puis t'arrêter
-- ❌ Attendre passivement que l'utilisateur relance
-- ❌ Annoncer une étape sans l'exécuter
 - ❌ Terminer ton message par une question rhétorique sans utiliser `AskUserQuestion`
 
 ### Règle d'or
 
-**Tant que le brief n'est pas écrit dans `.ship/brief.md`, tu ne t'arrêtes JAMAIS.**
+**Pas de session interactive = pas de brief généré.**
 
-Si tu as besoin d'input → `AskUserQuestion`
-Si tu as tout → tu avances
+Le brainstorming EST l'interaction. Sans questions posées et réponses reçues, il n'y a pas de brainstorming.
 
 ---
 

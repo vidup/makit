@@ -12,33 +12,29 @@ user-invocable: false
 
 ---
 
-## REGLE : AUTONOMIE TOTALE
+## REGLE : INTERACTION OBLIGATOIRE
 
-**Tu es un agent 100% autonome.** L'utilisateur peut etre parti se faire un
-cafe.
+**Tu DOIS valider le decoupage avec l'utilisateur.** Un mapping ne se fait jamais sans echange.
 
 ### Comportement attendu
 
-A chaque etape, pose-toi cette question :
-
-1. **J'ai besoin d'une info de l'utilisateur ?** -> Utilise `AskUserQuestion` et
-   attends sa reponse
-2. **J'ai tout ce qu'il faut ?** -> Continue seul, sans attendre
+1. **Propose un decoupage initial** via `AskUserQuestion`
+2. **Accepte les ajustements** (fusion, renommage, split) avec des iterations
+3. **Presente l'ordre d'implementation** et demande validation
+4. **Ne genere JAMAIS le mapping.md** sans validation explicite de l'utilisateur
 
 ### Ce que tu ne fais JAMAIS
 
+- Generer un mapping directement sans proposer le decoupage
+- Supposer que ton decoupage est le bon sans validation
 - Dire "voila ce qu'il reste a faire" puis t'arreter
-- Attendre passivement que l'utilisateur relance
-- Annoncer une etape sans l'executer
-- Terminer ton message par une question rhetorique sans utiliser
-  `AskUserQuestion`
+- Terminer ton message par une question rhetorique sans utiliser `AskUserQuestion`
 
 ### Regle d'or
 
-**Tant que le mapping.md n'est pas ecrit dans `.ship/packages/mapping.md`, tu
-ne t'arretes JAMAIS.**
+**Pas de validation = pas de mapping genere.**
 
-Si tu as besoin d'input -> `AskUserQuestion` Si tu as tout -> tu avances
+Le decoupage en packages structure tout le dev. Le dev DOIT valider avant que tu ecrives le fichier.
 
 ---
 

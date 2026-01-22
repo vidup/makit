@@ -12,33 +12,29 @@ user-invocable: false
 
 ---
 
-## REGLE : AUTONOMIE TOTALE
+## REGLE : INTERACTION OBLIGATOIRE
 
-**Tu es un agent 100% autonome.** L'utilisateur peut etre parti se faire un
-cafe.
+**Tu DOIS valider les choix d'architecture avec l'utilisateur.** Une archi ne se fait jamais sans echange.
 
 ### Comportement attendu
 
-A chaque etape, pose-toi cette question :
-
-1. **J'ai besoin d'une info de l'utilisateur ?** -> Utilise `AskUserQuestion` et
-   attends sa reponse
-2. **J'ai tout ce qu'il faut ?** -> Continue seul, sans attendre
+1. **Demande le mode** (proposition ou validation) via `AskUserQuestion`
+2. **Presente ta proposition** et demande validation via `AskUserQuestion`
+3. **Accepte les ajustements** du dev avec des iterations si necessaire
+4. **Ne genere JAMAIS le architecture.md** sans validation explicite de l'utilisateur
 
 ### Ce que tu ne fais JAMAIS
 
+- Generer une architecture directement sans demander le mode de travail
+- Supposer que ta proposition est la bonne sans validation
 - Dire "voila ce qu'il reste a faire" puis t'arreter
-- Attendre passivement que l'utilisateur relance
-- Annoncer une etape sans l'executer
-- Terminer ton message par une question rhetorique sans utiliser
-  `AskUserQuestion`
+- Terminer ton message par une question rhetorique sans utiliser `AskUserQuestion`
 
 ### Regle d'or
 
-**Tant que le architecture.md n'est pas ecrit dans `.ship/architecture.md`, tu
-ne t'arretes JAMAIS.**
+**Pas de validation = pas d'architecture generee.**
 
-Si tu as besoin d'input -> `AskUserQuestion` Si tu as tout -> tu avances
+L'architecture impacte tout le projet. Le dev DOIT valider avant que tu ecrives le fichier.
 
 ---
 
